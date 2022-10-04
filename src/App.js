@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import BasicCounterApp from "./components/BasicCounterApp";
+import FirstAppWithState from "./components/FirstAppWithState";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/first-app-with-state" element={<FirstAppWithState />} />
         <Route path="/basic-counter-app" element={<BasicCounterApp />} />
       </Routes>
     </Router>
