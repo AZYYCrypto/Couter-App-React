@@ -1,28 +1,16 @@
-import "./App.css";
-import React, { useState } from "react";
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import BasicCounterApp from "./components/BasicCounterApp";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
 function App() {
-  const [Counter, setCounter] = useState(0);
   return (
-    <div className="App">
-      <button
-        type="click"
-        onClick={() => {
-          setCounter(Counter - 1);
-        }}
-      >
-        -
-      </button>
-      <p>{Counter}</p>
-      <button
-        type="click"
-        onClick={() => {
-          setCounter(Counter + 1);
-        }}
-      >
-        +
-      </button>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/basic-counter-app" element={<BasicCounterApp />} />
+      </Routes>
+    </Router>
   );
 }
 
